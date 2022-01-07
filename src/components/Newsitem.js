@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 export class Newsitem extends Component {
     render() {
         let {title,imgDesc, imgUrl, newsUrl, content} = this.props;
-        if (imgDesc === null){
+        if (imgDesc === null && content!= null){
             imgDesc = content.slice(0,130) + '...';
-        }else if(imgDesc.length >= 170){
+        }else if(imgDesc != null && imgDesc.length >= 170){
             imgDesc = imgDesc.slice(0,190) + '...';
         }
         return (
