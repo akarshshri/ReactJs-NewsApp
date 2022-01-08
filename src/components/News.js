@@ -4,8 +4,12 @@ import Spinner from './Spinner'
 
 export class News extends Component {
 
-    constructor() {
-        super();
+    capitalizeFirstLetter =  (string)=>{
+        return string.charAt(0).toUpperCase() + string.slice(1);
+      }
+
+    constructor(props) {
+        super(props);
         this.state = {
             articles: [],
             loading: true,
@@ -15,6 +19,7 @@ export class News extends Component {
 
         }
         //console.log(this.state.totalResults);
+        document.title = this.capitalizeFirstLetter(this.props.cat) + ' - News App';
     }
 
     async componentDidMount() {
@@ -75,12 +80,12 @@ export class News extends Component {
 
                 <div>
                     <div className="container pt-4">
-                        <h2 className='text-center'>Daily Highlighted News</h2>
+                        <h2 className='text-center'>Daily Highlighted News - {this.capitalizeFirstLetter(this.props.cat)}</h2>
                         {this.state.loading && <Spinner />}
                         <div className="row pt-3 d-flex justify-content-center">
                             {!this.state.loading && this.state.articles.map((element) => {
                                 return <div key={element.url} className="col-md-6 col-lg-4 ">
-                                    <Newsitem imgUrl={element.urlToImage} newsUrl={element.url} title={element.title } imgDesc={element.description} content={element.content} />
+                                    <Newsitem author = {element.author} artDate={element.publishedAt} imgUrl={element.urlToImage} newsUrl={element.url} title={element.title } imgDesc={element.description} content={element.content} />
                                 </div>
                             })}
 
