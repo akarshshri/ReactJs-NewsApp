@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom'
 
 const Navbar = (props)=>{
 
-
+    //console.log(props)
     
         return (
             <div>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <nav className={`navbar navbar-expand-lg fixed-top navbar-${props.mode === 'light' ? 'light' : 'dark'} bg-${props.mode === 'light' ? 'light' : 'dark'}`}>
                     <div className="container-fluid">
                         <Link className="navbar-brand" to="/">NewsApp</Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +28,7 @@ const Navbar = (props)=>{
                                 <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Category
                                 </a>
-                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <ul className={`dropdown-menu `} aria-labelledby="navbarDropdown">
                                     <li><Link className="dropdown-item" to="/business">Business</Link></li>
                                     <li><Link className="dropdown-item" to="/entertainment">Entertainment</Link></li>
                                     <li><Link className="dropdown-item" to="/health">Health</Link></li>
@@ -38,10 +38,9 @@ const Navbar = (props)=>{
                                 </ul>
                             </li>
                             </ul>
-                            <div className="form-check form-switch mx-3">
+                            <div className="form-check form-switch mx-3 w-auto" style={{paddingLeft:'1.5rem'}}>
                                 <input className="form-check-input" type="checkbox" role="switch" id="themeToggle" onClick={props.toggleMode} />
-                                <label className={`form-check-label text-${props.mode === 'light' ? 'dark' : 'light'}`} htmlFor="flexSwitchCheckDefault">DarkMode is <b>{props.toggleMode === 'light' ? 'OFF' : 'ON'}</b> </label>
-                            {console.log('ToggleMode: '+props.toggleMode +'/n Mode: ' + props.Mode)}
+                                <label className={`form-check-label text-${props.mode === 'light' ? 'dark' : 'light'}`} htmlFor="flexSwitchCheckDefault">DarkMode is <b>{props.mode === 'light' ? 'OFF' : 'ON'}</b> </label>
                             </div>
                             <form className="d-flex">
                                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />

@@ -17,7 +17,7 @@ const Newsitem = (props)=> {
         return (
             <>
 
-                <div className="card m-auto mt-3 " style={{ height: '32rem' }} >
+                <div className={`card m-auto mt-3 bg-${props.mode === 'light' ? 'light' : 'dark'} text-${props.mode === 'light' ? 'dark' : 'light'}`} style={{ height: '32rem' }} >
                     <img src={imgUrl != null ? imgUrl : 'https://newsinterpretation.com/wp-content/uploads/2020/03/news33.jpg'} className="card-img-top" alt="N/A" style={{ height: '12rem' }} />
                         <div style={{display:'flex', justifyContent: 'flex-end', position: 'absolute', right: '0'}}>
                         <span className=" badge rounded-pill bg-danger">
