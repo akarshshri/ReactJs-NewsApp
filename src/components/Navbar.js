@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+
 export class Navbar extends Component {
 
 
@@ -21,7 +22,25 @@ export class Navbar extends Component {
                                     <a className="nav-link" href="/About">About</a>
                                 </li>
 
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Category
+                                </a>
+                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a className="dropdown-item" href="/">Business</a></li>
+                                    <li><a className="dropdown-item" href="/">Entertainment</a></li>
+                                    <li><a className="dropdown-item" href="/">General</a></li>
+                                    <li><a className="dropdown-item" href="/">Health</a></li>
+                                    <li><a className="dropdown-item" href="/">Science</a></li>
+                                    <li><a className="dropdown-item" href="/">Sports</a></li>
+                                    <li><a className="dropdown-item" href="/">Technology</a></li>
+                                </ul>
+                            </li>
                             </ul>
+                            <div className="form-check form-switch mx-3">
+                                <input className="form-check-input" type="checkbox" role="switch" id="themeToggle" onClick={this.props.toggleMode} />
+                                <label className={`form-check-label text-${this.props.toggleMode === 'light' ? 'dark' : 'light'}`} htmlFor="flexSwitchCheckDefault">DarkMode is <b>{this.props.toggleMode === 'light' ? 'OFF' : 'ON'}</b> </label>
+                            </div>
                             <form className="d-flex">
                                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                                 <button className="btn btn-outline-success" type="submit">Search</button>
