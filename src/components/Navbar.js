@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 
 
-export class Navbar extends Component {
+const Navbar = (props)=>{
 
 
-    render() {
+    
         return (
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -39,8 +39,9 @@ export class Navbar extends Component {
                             </li>
                             </ul>
                             <div className="form-check form-switch mx-3">
-                                <input className="form-check-input" type="checkbox" role="switch" id="themeToggle" onClick={this.props.toggleMode} />
-                                <label className={`form-check-label text-${this.props.toggleMode === 'light' ? 'dark' : 'light'}`} htmlFor="flexSwitchCheckDefault">DarkMode is <b>{this.props.toggleMode === 'light' ? 'OFF' : 'ON'}</b> </label>
+                                <input className="form-check-input" type="checkbox" role="switch" id="themeToggle" onClick={props.toggleMode} />
+                                <label className={`form-check-label text-${props.mode === 'light' ? 'dark' : 'light'}`} htmlFor="flexSwitchCheckDefault">DarkMode is <b>{props.toggleMode === 'light' ? 'OFF' : 'ON'}</b> </label>
+                            {console.log('ToggleMode: '+props.toggleMode +'/n Mode: ' + props.Mode)}
                             </div>
                             <form className="d-flex">
                                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
@@ -52,6 +53,6 @@ export class Navbar extends Component {
             </div>
         )
     }
-}
+
 
 export default Navbar
