@@ -21,9 +21,9 @@ Also, git Pages doesnot support React Routes(which is used in this Project).
     -Loading gif
 
 ## Screenshots:
-![alt text](https://github.com/akarshshri/ReactJs-NewsApp/tree/main/src/Screenshots/1.png)
-![alt text](https://github.com/akarshshri/ReactJs-NewsApp/tree/main/src/Screenshots/2.png)
-![alt text](https://github.com/akarshshri/ReactJs-NewsApp/tree/main/src/Screenshots/3.png)
+![alt text](https://github.com/akarshshri/ReactJs-NewsApp/blob/main/src/Screenshots/1.png)
+![alt text](https://github.com/akarshshri/ReactJs-NewsApp/blob/main/src/Screenshots/2.png)
+![alt text](https://github.com/akarshshri/ReactJs-NewsApp/blob/main/src/Screenshots/3.png)
 
 ## Available Scripts
 
