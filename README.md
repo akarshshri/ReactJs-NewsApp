@@ -17,7 +17,7 @@ Also, git Pages doesnot support React Routes(which is used in this Project).
     -Dark Mode
     -Mobile Responsive
     -Catagories
-    -Search (Coming Soon)
+    -Search
     -Loading gif
 
 ## Screenshots:

@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+
 
 
 
 const Navbar = (props)=>{
 
-    //console.log(props)
+    const [search, setSearch] = useState("");
+    const onChange = (e)=>{
+        e.persist();
+        setSearch(e.target.value);
+    }
+    useEffect(() => {
+        //console.log(search);
+        props.search(search)
+    }, [search]);
     
         return (
             <div>
@@ -42,9 +51,9 @@ const Navbar = (props)=>{
                                 <input className="form-check-input" type="checkbox" role="switch" id="themeToggle" onClick={props.toggleMode} />
                                 <label className={`form-check-label text-${props.mode === 'light' ? 'dark' : 'light'}`} htmlFor="flexSwitchCheckDefault">DarkMode is <b>{props.mode === 'light' ? 'OFF' : 'ON'}</b> </label>
                             </div>
-                            <form className="d-flex">
-                                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                                <button className="btn btn-outline-success" type="submit">Search</button>
+                            <form className="d-flex" onSubmit={props.searchHandle}>
+                                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={onChange} />
+                                <button className="btn btn-outline-success" type="submit" >Search</button>
                             </form>
                         </div>
                     </div>
