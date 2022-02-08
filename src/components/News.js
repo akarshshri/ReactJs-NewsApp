@@ -11,8 +11,8 @@ const News = (props)=> {
     const [articles, setarticles] = useState([])
     const [loading, setloading] = useState(true)
     const [page, setpage] = useState(1)
-    const [pageSize, setpageSize] = useState(18)
-    const [btnStatus, setbtnStatus] = useState(false)
+    // const [pageSize, setpageSize] = useState(18)
+    // const [btnStatus, setbtnStatus] = useState(false)
     const [totalResults, settotalResults] = useState(0)
     const [initLoading, setInitLoading] = useState(true)
     
@@ -121,7 +121,7 @@ const News = (props)=> {
                     {/* <div className="d-flex justify-content-between pb-3 mt-3">
                             <button type="button" className="btn btn-success" disabled={page <= 1} onClick={handlePrevClick}> &larr; Previous</button>
                             <button type="button" className="btn btn-success" disabled={Math.floor(totalResults / props.pageSize) < page} onClick={handleNextClick}>Next &rarr;</button>
-                        </div> */}  
+                        </div>   */}
 
                 </div>
 
